@@ -6,40 +6,36 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginObjects {
-	
+
 	WebDriver objDriver;
+
 	public LoginObjects(WebDriver driver) {
-        this.objDriver = driver;
-        PageFactory.initElements(objDriver, this);
-    }
+		this.objDriver = driver;
+		PageFactory.initElements(objDriver, this);
+	}
 
 	@FindBy(linkText = "Log in")
-	private
-	WebElement loginLink;
+	private WebElement loginLink;
 
 	@FindBy(name = "user_login")
-	private
-	WebElement userName;
+	private WebElement userName;
 
 	@FindBy(id = "password")
-	private
-	WebElement password;
+	private WebElement password;
 
 	@FindBy(className = "rememberMe")
-	private
-	WebElement rememberMe;
+	private WebElement rememberMe;
 
 	@FindBy(name = "btn_login")
-	private
-	WebElement loginBtn;
+	private WebElement loginBtn;
 
 	@FindBy(className = "error_msg")
-	private
-	WebElement errorMsg;
+	private WebElement errorMsg;
 
 	/**
 	 * @return the loginLink
 	 */
+
 	public WebElement getLoginLink() {
 		return loginLink;
 	}
@@ -114,4 +110,3 @@ public class LoginObjects {
 		return errorMsg;
 	}
 }
-

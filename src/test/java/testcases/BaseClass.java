@@ -10,6 +10,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import com.codoid.products.exception.FilloException;
+import com.codoid.products.fillo.Connection;
+import com.codoid.products.fillo.Fillo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -22,9 +25,16 @@ public class BaseClass {
 	public ExtentReports report;
 	public ExtentTest test;
 	
+
+	Fillo fillo;
+	Connection connection;
+	
 	@BeforeTest
-	public void ReportSetUp() {
+	public void ReportSetUp() throws FilloException {
 		report = new ExtentReports("ExtendReport.html");
+		
+		fillo = new Fillo();
+		connection = fillo.getConnection("DataSheet.xlsx");
 	}
 	@BeforeMethod
 	public void SetUp(Method method) {

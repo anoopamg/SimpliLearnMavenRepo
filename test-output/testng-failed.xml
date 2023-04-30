@@ -5,9 +5,11 @@
     <classes>
       <class name="testcases.LoginTest">
         <methods>
+          <include name="ReportClean"/>
           <include name="SetUp"/>
+          <include name="readFromXcel"/>
           <include name="FinishTest"/>
-          <include name="invalidLoginTest"/>
+          <include name="ReportSetUp"/>
         </methods>
       </class> <!-- testcases.LoginTest -->
     </classes>
